@@ -1,0 +1,40 @@
+<!-- Dibuat oleh M Nur Rizqi Saputra -->
+<!-- Kelas SI 02 -->
+<!-- NIM : 0110120025 -->
+<!--  TUGAS JS : MEMBUAT FITUR IMAGE PICKER -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IMAGE PICKER</title>
+    </head>
+
+    <body style="margin: 210px" bgcolor="navy">
+        <h1 style="background: white;"><marquee>SELAMAT DATANG</marquee></h1>
+        <center><h1 style="background: white;"> DI FITUR IMAGE PICKER</h1></center>
+        <center>
+        <select onchange="gantigambar();" id="listgambar">
+            <option value="" disabled selected>PILIH BENDERA NEGARA ASEAN</option>
+			<option value="img/INDONESIA.gif">INDONESIA</option>
+			<option value="img/MALAYSIA.gif">MALAYSIA</option>
+			<option value="img/THAILAND.gif">THAILAND</option>
+			<option value="img/VIETNAM.gif">VIETNAM</option>
+			<option value="img/FILIPINA.gif">FILIPINA</option>
+			<option value="img/SINGAPURA.gif">SINGAPURA</option>
+            <option value="img/BRUNEI DARUSSALAM.gif">BRUNEI DARUSSALAM</option>
+            <option value="img/LAOS.gif">LAOS</option>
+            <option value="img/MYANMAR.gif">MYANMAR</option>
+            <option value="img/TIMOR LESTE.gif">TIMOR LESTE</option>
+		</select>
+        </center>
+        <br/>
+        <img src="img/ASEAN.jpg" style="width: 100%" id="gambar">
+
+        <script type="text/javascript">
+            function gantigambar() {
+                let gambar = document.getElementById("listgambar").value;
+                document.getElementById("gambar").src = gambar;
+                alert("Ini bendera " + gambar);
+            }
+        </script>
+    </body>
+</html>

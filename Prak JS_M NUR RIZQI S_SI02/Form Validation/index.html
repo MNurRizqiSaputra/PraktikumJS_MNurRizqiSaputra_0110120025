@@ -1,0 +1,78 @@
+<!-- Dibuat oleh M Nur Rizqi Saputra -->
+<!-- Kelas SI 02 -->
+<!-- NIM : 0110120025 -->
+<!--  TUGAS JS : Form Validation -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Form Validasi</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body background="img/bus.gif">
+		<h1 style="background: rgb(250, 243, 243);"><marquee>SELAMAT DATANG</marquee>
+			<center> DI FITUR FORM VALIDATION</h1></center>
+	<div id="booking">
+			<center>
+			<form method="request" class="jadwal" id="jadwal" >
+				<h1>TIKET BUS</h1>
+				<h2>JABODETABEK</h2>
+				<div class="garisjudul"></div>
+				<input type="text" class="formlogin" id="name" name="name" onKeyPress="return maxlength(event)" placeholder="Nama " required="" /><br>
+				<input type="email" class="formlogin" id="email" name="email" placeholder="Email" required /><br>
+ 				<input type="time" class="formlogin" id="jam" name="jam" required /><br>
+				<center>
+							<select  name="tujuan" class="form_loginn" id="tujuan" required>
+								<option value="" disabled selected>PILIH TUJUAN</option>
+								<option value="JAKARTA"> JAKARTA </option>
+								<option value="BOGOR"> BOGOR  </option>
+								<option value="DEPOK"> DEPOK  </option>
+								<option value="TANGGERANG"> TANGGERANG </option>
+								<option value="BEKASI"> BEKASI  </option>
+							</select>
+				</center>
+				<br>
+				<input type="text" class="formlogin" id="tiket" name="tiket" placeholder="Jumlah Tiket " onKeyUp="angka(this)" maxlength="2" required />
+				<br>
+ 				
+				<input type="submit" class="btnlogin" onClick="return validasi()" value="BOOKING">
+			</form>
+		</center>
+	</div>
+	</body>
+<script>
+function maxlength(evt) { //untuk persyaratan input nama
+	var panjangnama = document.getElementById("name").value;
+	if (panjangnama.length >= 20  ){
+		window.alert("Max Length 30");
+		return false;
+	}
+}
+
+function angka(e) { //untuk persyaratan input tiket
+  var max = document.getElementById("tiket").value;
+  if (!/^[0-9]+$/.test(e.value)) {
+	window.alert("Masukkan jumlah tiket dengan benar");
+    e.value = e.value.substring(0,e.value.length-1);
+	max.length = 2;
+  }
+}
+
+function validasi() { //untuk mengambil isi nilai variabel
+	var nama = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var jam  = document.getElementById("jam").value;
+	var tujuan  = document.getElementById("tujuan").value;
+	var tiket = document.getElementById("tiket").value;
+	
+	if (nama && email && jam  && tujuan  && tiket ) { //untuk menampilkan data yang telah di input
+		document.getElementById("jadwal").innerHTML= "<h1>TERIMA KASIH TELAH MEMESAN</h1>" + "<br><br>" +"<b>Nama : </b>" + nama + "<br>" + "<b>Email : </b>" + email + "<br>" 
+		+ "<b>Jam Berangkat : </b>" + jam + "<br>" + "<b>Tujuan : </b>" + tujuan + "<br>" + "<b>Jumlah Tiket : </b>" + tiket + "<br><br>" + "===========";
+		return false;
+	}else{
+		alert("Harap Isi dengan Benar");
+	}	
+}
+</script>
+</html>

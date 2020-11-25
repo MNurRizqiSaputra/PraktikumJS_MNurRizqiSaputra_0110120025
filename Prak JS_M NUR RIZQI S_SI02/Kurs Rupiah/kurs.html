@@ -1,0 +1,82 @@
+<!-- Dibuat oleh M Nur Rizqi Saputra -->
+<!-- Kelas SI 02 -->
+<!-- NIM : 0110120025 -->
+<!--  TUGAS JS : MEMBUAT KURS RUPIAH -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kurs Mata Uang</title>
+</head>
+<body style="background-color: rgb(206, 194, 30);color:whitesmoke; text-align: center;">
+	<h1 style="background: rgb(14, 13, 13);"><marquee>SELAMAT DATANG</marquee>
+	<center> DI FITUR KURS MATA UANG</h1></center>
+	<br>
+	<br>
+		<table border="25" style="width: 100%" width="100%" cellpadding="10" cellspasing="30">
+			<thead>
+				<th style="background-color: rgb(210, 30, 30);" width="25%" height="100px" >MASUKAN NILAI</th>
+				<th style="background-color:rgb(210, 30, 30);" width="50%" height="100px" >CONVERT</th>
+				<th style="background-color: rgb(210, 30, 30);" width="50%" height="100px" >NILAI RUPIAH</th>
+			</thead>
+			<img src="img/mata uang.jpg">
+
+			<hr width="100%" height:"10px" color="navy" size="10">
+
+			<tbody>
+				<td style="background-color: navy;"><input onkeyup="kurs()" style="width: 70%" placeholder="MASUKAN NILAI" type="number" name="nilai" id="nilai"></td>
+				<td  style="background-color: navy;">
+				<select onchange="kurs()" id="kurs" style="width: 50%" >
+					<option value="" disabled selected>PILIH MATA UANG</option>
+					<option value="1">Dollar US</option>
+					<option value="2">Dollar Singapore</option>
+					<option value="3">Ringgit Malaysia</option>
+					<option value="4">Yen Japan</option>
+					<option value="5">Euro</option>
+					<option value="6">Riyal Arab Saudi</option>
+				</select>
+				</td>
+				<td  style="background-color: navy;"><input type="text" disabled="" id="rupiah" placeholder="NILAI RUPIAH" style="width: 70%" name="rupiah">
+				</td>
+			</tbody>
+		</table>
+	
+</body>
+<script type="text/javascript">
+	function kurs() {
+
+		cnvtr = document.getElementById("kurs").value;
+
+		if (cnvtr == 1) {
+			input = document.getElementById("nilai").value;
+			nilai = 9915 ;
+			hitung = nilai * input;
+			document.getElementById("rupiah").value = hitung;
+		}else if (cnvtr == 2) {
+			input = document.getElementById("nilai").value;
+			nilai = 13472 ;
+			hitung = nilai * input;
+			document.getElementById("rupiah").value = hitung;
+		}else if (cnvtr == 3) {
+			input = document.getElementById("nilai").value;
+			nilai = 874;
+			hitung = nilai * input;
+			document.getElementById("rupiah").value = hitung;
+		}else if (cnvtr == 4) {
+			input = document.getElementById("nilai").value;
+			nilai = 120 ;
+			hitung = nilai * input;
+			document.getElementById("rupiah").value = hitung;
+		}else if (cnvtr == 5) {
+			input = document.getElementById("nilai").value;
+			nilai = 15888;
+			hitung = nilai * input;
+			document.getElementById("rupiah").value = hitung;
+		}else if (cnvtr == 6) {
+			input = document.getElementById("nilai").value;
+			nilai = 3592;
+			hitung = nilai * input;
+			document.getElementById("rupiah").value = hitung;
+		}
+	}
+</script>
+</html>
